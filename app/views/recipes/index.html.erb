@@ -1,0 +1,18 @@
+<% @recipe.each_slice(3) do |recipes| %>
+  <div class= "row">
+    <% recipes.each do |recipe| %>
+      <div class= "col-md-4">
+        <div class= "recipe">
+          <div class= "image_wrapper">
+            <%= link_to recipe do %>
+             <%= image_tag recipe.image.url(:medium) %>
+            <% end %>
+          </div>
+            <h2>
+               <%= link_to recipe.title, recipe %>
+            </h2>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
